@@ -1,6 +1,6 @@
 // Business Logic
-function romanNumerals(number) {
-  
+function romanNumerals(userNumber) {
+  let number = parseInt(userNumber);
   const symbols = ["M",   "CM", "D",  "CD",  "C", "XC","L", "XL","X","IX","V","IV","I"]
   const numbers = ["1000","900","500","400","100","90","50","40","10","9","5","4","1"]
   let answer = ""
@@ -19,14 +19,12 @@ function romanNumerals(number) {
   return answer;
 }
 
-console.log(romanNumerals(49))
-
 // UI Logic
 
-// $(document).ready(function() {
-//   $("#formOne").submit(function(event) {
-//     event.preventDefault();
-//     let input = ($("input#input").val());
-//     $("#output").append(romanNumerals(input));
-//   })
-// })
+$(document).ready(function() {
+  $("#formOne").submit(function(event) {
+    event.preventDefault();
+    let input = ($("input#input").val());
+    $("#output").html(romanNumerals(input));
+  })
+})
